@@ -12,5 +12,5 @@ Cobalt Strike的Malleable C2配置文件，定义了 victim 与 团队服务器 
 具体说明
 
 |Malleable C2配置文件|描述|
-|:-------------:|-----|
-|malleable_C2_jQuery_c2.3.11_CN_cdn.bootcss.com.txt|伪装成正常HTTP流量 浏览器与服务器之间的jQuery_c2.3.11.js相关流量(注意:事实上该流量特征已被加黑!完全可以自行修改伪装为其他常见的HTTP流量) 具体参考 [APT级的全面免杀与企业纵深防御体系的对抗 - 先知社区](https://xz.aliyun.com/t/4191)|
+|:-----:|---------------|
+|malleable_C2_jQuery_c2.3.11_CN_cdn.bootcss.com.txt|伪装成正常HTTP流量 浏览器与服务器之间的jQuery_c2.3.11.js相关流量 具体参考 [APT级的全面免杀与企业纵深防御体系的对抗 - 先知社区](https://xz.aliyun.com/t/4191)  注意:事实上该流量特征已被加黑!完全可以自行修改伪装为其他常见的HTTP流量.|
