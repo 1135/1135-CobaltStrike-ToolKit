@@ -28,3 +28,15 @@ AggressorScripts - 修改或扩展Cobalt Strike 3.* 的客户端功能(可实现
 |脚本文件|描述|
 |:-----:|---------------|
 |LoopDo.cna|每隔x分钟执行一次操作 可以是 自定义cmd命令/屏幕截图/logonpasswords/...|
+
+
+补充说明
+
+teamserver服务器日志 - 文件夹`cobaltstrike/logs/{date}/{ip}`
+
+|Log Type|ext|location|
+|:-----:|-|------------|
+|Beacon命令行 所有内容|.log|`/cobaltstrike/logs/191107/10.10.13.19/becon_71256.log`|
+|屏幕截图|.jpg|`/cobaltstrike/logs/191107/10.10.13.19/screenshots/screen_050658_87924.jpg`|
+
+
