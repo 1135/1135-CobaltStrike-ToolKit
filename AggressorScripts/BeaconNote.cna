@@ -1,0 +1,8 @@
+# author: arr0w1
+# set Beacon note - set Beacon note to its ID and the time it was established on load and initial checkin
+# for example
+# bid: 86985 Established: 11/13/2019 16:50:19 (CST)
+
+on beacon_initial {
+	bnote($1,"bid: " . $1 . " Established: " . formatDate('MM/dd/yyyy HH:mm:ss (z)'));
+}
