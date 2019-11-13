@@ -25,9 +25,10 @@ AggressorScripts - 修改或扩展Cobalt Strike 3.* 的客户端功能(可实现
 
 具体说明
 
-|脚本文件|描述|
-|:-----:|---------------|
-|LoopDo.cna|每隔x分钟执行一次操作 可以是 自定义cmd命令/屏幕截图/logonpasswords/...|
+|filename|opsec|desc|demo|
+|:-----:|--|------|-------|
+|BeaconNote.cna|1|某个Beacon首次上线时 设置这个Beacon的note为`Beacon ID + 首次上线时间` |`bid: 86985 Established: 11/13/2019 16:50:19 (CST)`|
+|LoopDo.cna|0|每隔x分钟执行一次操作 | 按时执行 自定义cmd命令/屏幕截图/logonpasswords/...|
 
 
 补充说明
