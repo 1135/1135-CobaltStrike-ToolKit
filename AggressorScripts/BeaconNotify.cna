@@ -1,5 +1,6 @@
 # author: arr0w1
-# Send the message to Slack when a Beacon calls home for the first time.(Replace the 'slack_webhookURL' with yours)
+# Send the message to Slack on beacon_initial(when a Beacon calls home for the first time).
+# Replace the 'slack_webhookURL' with yours.
 #
 # For example, you will receive the following message when a Beacon calls home for the first time.
 #
