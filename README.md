@@ -32,8 +32,7 @@ AggressorScripts - 修改或扩展Cobalt Strike 3.* 的客户端功能(可实现
 |LoopDo.cna|0|每隔x分钟执行一次操作 | 按时执行 自定义cmd命令/屏幕截图/logonpasswords/...|
 
 
-
-补充说明
+#### 补充说明
 
 teamserver服务器日志 - 文件夹`cobaltstrike/logs/{date}/{ip}`
 
@@ -43,3 +42,8 @@ teamserver服务器日志 - 文件夹`cobaltstrike/logs/{date}/{ip}`
 |屏幕截图|.jpg|`/cobaltstrike/logs/191107/10.10.13.19/screenshots/screen_050658_87924.jpg`|
 
 
+#### Others
+
+|author/filename|opsec|desc|demo|
+|:-----:|--|------|-------|
+| [outflanknl/Ps-Tools](https://github.com/outflanknl/Ps-Tools) PS-Tools.cna | ? | 列出进程的详细信息 |5种命令`psx psk psc psm psh psw` |
