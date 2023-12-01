@@ -53,5 +53,6 @@ teamserver服务器日志 - 文件夹`cobaltstrike/logs/{date}/{ip}`
 
 |author/filename|opsec|desc|demo|
 |:-----:|--|------|-------|
+| [Cobalt Strike ZeroLogon-BOF](https://github.com/rsmudge/ZeroLogon-BOF) | ? | ZeroLogon CVE-2020-1472 |
 | [outflanknl/Ps-Tools](https://github.com/outflanknl/Ps-Tools) PS-Tools.cna | ? | 列出进程的详细信息 |5种命令`psx psk psc psm psh psw` |
-| https://github.com/rsmudge/ElevateKit | ? | [官方推荐](https://www.cobaltstrike.com/help-beacon) 多个较新的提权漏洞exp.  版本要求: for Cobalt Strike 3.6 and later. | |
+| https://github.com/rsmudge/ElevateKit | ? | [官方推荐](https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/post-exploitation_privilege-escalation.htm?Highlight=ElevateKit) 多个较新的提权漏洞exp.  版本要求: for Cobalt Strike 3.6 and later. | |
